@@ -5,7 +5,7 @@ const weatherService = require('./services/weatherService');
 const app = express();
 
 app.get('/weather', async (req, res) => {
-    const city = req.query.city || 'Buenos Aires';
+    const city = req.query.city || 'London,uk';
     try {
         const data = await weatherService.getWeather(city);
         res.json(data);
@@ -14,4 +14,4 @@ app.get('/weather', async (req, res) => {
     }
 });
 
-app.listen(3000, () => console.log('API de Clima corriendo en http://localhost:3000/weather?city=BuenosAires'));
+app.listen(3000, () => console.log('API de Clima corriendo en http://localhost:3000/weather?city=London,uk'));
